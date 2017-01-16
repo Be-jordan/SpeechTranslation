@@ -1,0 +1,23 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpeechTranslate", "SpeechTranslate\SpeechTranslate.csproj", "{ECD5A490-CDB8-41B7-8D6E-7331AF1594FA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|iPhoneSimulator = Debug|iPhoneSimulator
+		Release|iPhone = Release|iPhone
+		Release|iPhoneSimulator = Release|iPhoneSimulator
+		Debug|iPhone = Debug|iPhone
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{ECD5A490-CDB8-41B7-8D6E-7331AF1594FA}.Debug|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
+		{ECD5A490-CDB8-41B7-8D6E-7331AF1594FA}.Debug|iPhoneSimulator.Build.0 = Debug|iPhoneSimulator
+		{ECD5A490-CDB8-41B7-8D6E-7331AF1594FA}.Release|iPhone.ActiveCfg = Release|iPhone
+		{ECD5A490-CDB8-41B7-8D6E-7331AF1594FA}.Release|iPhone.Build.0 = Release|iPhone
+		{ECD5A490-CDB8-41B7-8D6E-7331AF1594FA}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
+		{ECD5A490-CDB8-41B7-8D6E-7331AF1594FA}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
+		{ECD5A490-CDB8-41B7-8D6E-7331AF1594FA}.Debug|iPhone.ActiveCfg = Debug|iPhone
+		{ECD5A490-CDB8-41B7-8D6E-7331AF1594FA}.Debug|iPhone.Build.0 = Debug|iPhone
+	EndGlobalSection
+EndGlobal

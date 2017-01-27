@@ -46,5 +46,7 @@
 		<string>ja</string>
 		<string>fr</string>
 	</array>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>asd</string>
 </dict>
 </plist>

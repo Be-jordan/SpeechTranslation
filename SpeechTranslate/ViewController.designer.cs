@@ -16,58 +16,22 @@ namespace SpeechTranslate
     {
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UITextField AudioUrlTextField { get; set; }
+        UIKit.UIButton Dictate { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UIButton PerformSpeechRecognitionButton { get; set; }
-
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UISlider pitchSlider { get; set; }
-
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UIButton Speech { get; set; }
-
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UITextView SpeechToTextView { get; set; }
-
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UISlider volumeSlider { get; set; }
+        UIKit.UILabel DictationResults { get; set; }
 
         void ReleaseDesignerOutlets ()
         {
-            if (AudioUrlTextField != null) {
-                AudioUrlTextField.Dispose ();
-                AudioUrlTextField = null;
+            if (Dictate != null) {
+                Dictate.Dispose ();
+                Dictate = null;
             }
 
-            if (PerformSpeechRecognitionButton != null) {
-                PerformSpeechRecognitionButton.Dispose ();
-                PerformSpeechRecognitionButton = null;
-            }
-
-            if (pitchSlider != null) {
-                pitchSlider.Dispose ();
-                pitchSlider = null;
-            }
-
-            if (Speech != null) {
-                Speech.Dispose ();
-                Speech = null;
-            }
-
-            if (SpeechToTextView != null) {
-                SpeechToTextView.Dispose ();
-                SpeechToTextView = null;
-            }
-
-            if (volumeSlider != null) {
-                volumeSlider.Dispose ();
-                volumeSlider = null;
+            if (DictationResults != null) {
+                DictationResults.Dispose ();
+                DictationResults = null;
             }
         }
     }

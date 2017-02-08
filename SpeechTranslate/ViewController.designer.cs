@@ -22,6 +22,18 @@ namespace SpeechTranslate
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UILabel DictationResults { get; set; }
 
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UISlider pitchSlider { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIButton ReadButton { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UISlider volumeSlider { get; set; }
+
         void ReleaseDesignerOutlets ()
         {
             if (Dictate != null) {
@@ -32,6 +44,21 @@ namespace SpeechTranslate
             if (DictationResults != null) {
                 DictationResults.Dispose ();
                 DictationResults = null;
+            }
+
+            if (pitchSlider != null) {
+                pitchSlider.Dispose ();
+                pitchSlider = null;
+            }
+
+            if (ReadButton != null) {
+                ReadButton.Dispose ();
+                ReadButton = null;
+            }
+
+            if (volumeSlider != null) {
+                volumeSlider.Dispose ();
+                volumeSlider = null;
             }
         }
     }

@@ -12,6 +12,12 @@ namespace SpeechTranslate
 {
     public partial class ViewController : UIViewController
     {
+
+        public float volume;
+
+        public float pitch;
+
+
         private readonly AVAudioEngine _audioEngine = new AVAudioEngine();
         private readonly SFSpeechRecognizer _speechRecognizer = new SFSpeechRecognizer();
         private SFSpeechAudioBufferRecognitionRequest _speechRequest;
@@ -21,11 +27,17 @@ namespace SpeechTranslate
         {
         }
 
+
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
 
             Dictate.Enabled = false;
+
+            ReadButton.TouchUpInside += (sender, e) =>
+                {
+                    Voice();
+                };
 
             SFSpeechRecognizer.RequestAuthorization(status =>
             {
@@ -44,6 +56,8 @@ namespace SpeechTranslate
                     Dictate.Enabled = true;
                     Dictate.TouchUpInside += OnDictate;
                 });
+
+
             });
         }
         public void OnDictate(object sender, EventArgs e)
@@ -69,6 +83,52 @@ namespace SpeechTranslate
                 }
             });
         }
+
+        public void Voice()
+        {
+            var speechSynthesizer = new AVSpeechSynthesizer();
+            var speechUtterance =
+                new AVSpeechUtterance(DictationResults.Text);
+            speechSynthesizer.SpeakUtterance(speechUtterance);
+        }
+
+        void Speak(string text)
+        {
+            var speechSynthesizer = new AVSpeechSynthesizer();
+
+            var speechUtterance = new AVSpeechUtterance(text)
+            {
+                Rate = AVSpeechUtterance.MaximumSpeechRate / 4,
+                Voice = AVSpeechSynthesisVoice.FromLanguage("en-US"),
+                Volume = volume,
+                PitchMultiplier = pitch
+            };
+
+            speechSynthesizer.SpeakUtterance(speechUtterance);
+        }
+
+        void InitPitchAndVolume()
+        {
+            volumeSlider.MinValue = 0;
+            volumeSlider.MaxValue = 1.0f;
+            volumeSlider.SetValue(volume, false);
+
+            pitchSlider.MinValue = 0.5f;
+            pitchSlider.MaxValue = 2.0f;
+            pitchSlider.SetValue(pitch, false);
+
+            volumeSlider.ValueChanged += (sender, e) =>
+            {
+                volume = volumeSlider.Value;
+            };
+
+            pitchSlider.ValueChanged += (sender, e) =>
+            {
+                pitch = volumeSlider.Value;
+            };
+        }
+
+
 
         private void startDictating()
         {
